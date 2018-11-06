@@ -1,5 +1,5 @@
 {
   "projects": {
-    "staging": "coachable-2e83b"
+    "default": "coachable-2e83b"
   }
 }
