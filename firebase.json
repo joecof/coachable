@@ -11,8 +11,11 @@
     ],
     "rewrites": [
       {
-        "source": "**",
+        "source": "/",
         "destination": "/index.html"
+      }, {
+        "source": "/schedule",
+        "destination": "/schedule.html"
       }
     ]
   }
