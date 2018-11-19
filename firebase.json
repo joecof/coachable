@@ -22,9 +22,6 @@
       }, {
         "source": "/dashboard",
         "destination": "/dashboard.html"
-      }, {
-        "source": "/hello",
-        "function": "helloWorld"
       }
     ]
   }
