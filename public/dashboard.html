@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+   <meta charset="utf-8">
+   <title>Dashboard</title>
+<style>
+ul {
+
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   background-color: black;
+}
+
+li {
+   float: left;
+}
+
+li a {
+   display: block;
+   color: white;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+}
+
+li a:hover {
+   background-color: #111;
+}
+
+* {
+ box-sizing: border-box;
+}
+body {
+ margin: 0;
+}
+#main {
+ display: flex;
+ min-height: 60vh;
+ border: 100px;
+}
+#main > article {
+ flex:1;
+}
+}
+#main > nav,
+#main > aside {
+ flex: 0 0 20vw;
+}
+#main > nav {
+ order: -1;
+}
+header, footerm article, nav, aside, footer {
+ padding: 5em;
+ border-width: 2px;
+ border: 1px solid black;
+ color:
+}
+header, footer {
+ height: 20vh;
+
+}
+</style>
+
+</head>
+<body>
+<header>Dashboard
+
+</header>
+<ul>
+<li><a class="active" href="#dashboard">Dashboard</a></li>
+<li><a class="active" href="#schedule">Schedule</a></li>
+<li><a class="active" href="#earnings">Earnings</a></li>
+<li><a class="active" href="#profile">Profile</a></li>
+</ul>
+<div id="main">
+<article><br/><br/><br/><br/><br/>Reminder: Be at 701 Primrose Avenue for 1-on-1 basketball coaching with Mike on this Tuesday. <br/>
+Reminder: Be at Glendale Central Park for group coaching basketbaLL session with Chris P and Alex W on this Thursday.
+</article>
+<nav><br/>10:00AM <br/><br/>
+2:00PM</nav>
+<aside><br/>$30/hr <br/><br/>
+$55/hr</aside>
+</div>
+</body>
+</html>
