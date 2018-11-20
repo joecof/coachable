@@ -18,7 +18,7 @@
     padding-bottom:10px;
     padding-left:10px;
     height: 80%;
-    width: 200px;
+    width: 15%;
 }
 
 #title {
@@ -26,28 +26,11 @@
     width: 300px;
 }
 
-#login {
-    float:right;
-    border: 1px solid black;
-    margin-right:5px;
-    width: 85px;
-    height: 50px;
-    text-align:center;
-}
-
-#signup {
-    float:right;
-    margin-right:30px;
-    border: 1px solid black;
-    width: 85px;
-    height: 50px;
-    text-align:center;
-}
-
 #content {
     width: 100%;
     height: 600px;
     border: 1px solid black;
+    text-align:center;
 }
 
 #menu {
@@ -56,28 +39,55 @@
     display: inline-block;
 }
 
-ul {
-    list-style-type:none;
-
-    text-align:center;
-    margin: 0;
-    padding: 0;
+.menu {
+    overflow:hidden; 
+    background-color:rgb(179, 172, 173);
 }
 
-li {
+.menu a {
+    display: inline-block;
+    color:#f2f2f2;
+    text-align:center;
+    text-decoration:none;
+    padding: 14px 16px 20px 16px;
+    font-size: 17px;
+}
+
+.menu a:hover {
+    background-color: pink;
+}
+
+#login {
+    float:right;
+}
+
+#signup {
+    float:right;
+}
+
+#contentPost {
+    /* margin:0 auto; */
     display: inline;
-    padding-left: 175px;
-    padding-right: 100px;
-    font-size: 20pt;
- 
-} 
-li a:hover {
-    background-color: #555;
-    color: white;
+
 }
 
-#placeholder1 {
-    padding-top:60px;
+#contentPost > h1 {
     text-align:center;
 }
+
+#contentPost ul {
+    text-align:center;
+}
+
+#contentPost li {
+    list-style-type:none; 
+}
+
+
+/**************/
+MEDIA QUERIES
+/*************/
+
+
+
 
