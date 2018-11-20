@@ -16,6 +16,12 @@
       }, {
         "source": "/schedule",
         "destination": "/schedule.html"
+      }, {
+        "source": "/earnings",
+        "destination": "/earnings.html"
+      }, {
+        "source": "/dashboard",
+        "destination": "/dashboard.html"
       }
     ]
   }
