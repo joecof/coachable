@@ -3,27 +3,38 @@
     <head>
         <meta charset = "utf-8">
         <link href = "earnings_style.css" rel = "stylesheet">
+        <script src = "earnings.js"></script>
     </head>
     <body>
         <div id = "wrapper">
             <div id = "header">
-                <img id = "logo" src = "https://image.freepik.com/free-icon/x-circle_318-2105.jpg" alt = "logo image"/>
-                <h1 id = "title">COACHABLE</h1>
-                <div id = "login"> <p> login </p></div>
-                <div id = "signup"> <p> sign up</p></div>
-            </div>
-            
-            
-            <div id = "content"> 
-                <div id = "menu"> 
-                        <ul>
-                            <li a href = "#dash">Dashboard</li>
-                            <li a href = "#schedule">Schedule</li>
-                            <li a href = "#earnings">Earnings</li>
-                            <li a href = "#profile">Profile</li>
-                        </ul>
+                <div class = "menu"> 
+                        <a href = "x"><img id = "logo" src = "https://image.freepik.com/free-icon/x-circle_318-2105.jpg" alt = "logo image"/></a>
+                        <a href = "active">Dashboard</a>
+                        <a href = "active">Earnings</a>
+                        <a href = "active">Schedule</a>
+                        <a href = "active">Profile</a> 
+                        <a href = "login" id = "login"> Login </a>
+                        <a href = "sign up" id = "signup">Sign Up</a>
                     </div>
+                <div>
             </div>
+            
+        <div id = "content"> 
+            
+            <div id = innerContent>
+                <h1> July 28 - July 31</h1>
+                <p id = "demo">July 28 $50</p>
+                <p id = "demo">July 28 $50</p>
+                <p id = "demo">July 28 $50</p>
+            </div>
+            <div> 
+                <!-- <button onclick="myFunction()">Click me</button> -->
+                <a onclick="myFunction()" class="previous">Previous</a>
+                <a onclick="myFunction2()" class="next">Next</a>
+            </div>
+
+           
 
             <div id = "footer">
 
