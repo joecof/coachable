@@ -1,29 +1,68 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset = "utf-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Coachable - Schedule</title>
+        <!-- update the version number as needed -->
+        <script defer src="/__/firebase/5.5.7/firebase-app.js"></script>
+        <!-- include only the Firebase features as you need -->
+        <script defer src="/__/firebase/5.5.7/firebase-auth.js"></script>
+        <script defer src="/__/firebase/5.5.7/firebase-database.js"></script>
+        <script defer src="/__/firebase/5.5.7/firebase-messaging.js"></script>
+        <script defer src="/__/firebase/5.5.7/firebase-storage.js"></script>
+        <!-- initialize the SDK after all desired features are loaded -->
+        <script defer src="/__/firebase/init.js"></script>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
         <link href = "./css/earnings_style.css" rel = "stylesheet">
+        <script src = "./js/earnings.js"></script>
     </head>
     <body>
-        <div id = "wrapper">
-            <div id = "header">
-                <img id = "logo" src = "https://image.freepik.com/free-icon/x-circle_318-2105.jpg" alt = "logo image"/>
-                <h1 id = "title">COACHABLE</h1>
-                <div id = "login"> <p> login </p></div>
-                <div id = "signup"> <p> sign up</p></div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Coachable</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Schedule</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Earning</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                </ul>
+                <button class="btn btn-outline-primary my-2 mx-1" type="button">Sign Up</button>
+                <button class="btn btn-outline-primary my-2 mx-1" type="button">Login</button>
+            </div>
+        </nav>
+        <div id = "content"> 
+            
+            <div id = innerContent>
+                <h1> July 28 - July 31</h1>
+                <p id = "demo">July 28 $50</p>
+                <p id = "demo">July 28 $50</p>
+                <p id = "demo">July 28 $50</p>
+            </div>
+            <div> 
+                <!-- <button onclick="myFunction()">Click me</button> -->
+                <a onclick="myFunction()" class="previous">Previous</a>
+                <a onclick="myFunction2()" class="next">Next</a>
             </div>
 
-
-            <div id = "content">
-                <div id = "menu">
-                        <ul>
-                            <li a href = "#dash">Dashboard</li>
-                            <li a href = "#schedule">Schedule</li>
-                            <li a href = "#earnings">Earnings</li>
-                            <li a href = "#profile">Profile</li>
-                        </ul>
-                    </div>
-            </div>
+           
 
             <div id = "footer">
 
