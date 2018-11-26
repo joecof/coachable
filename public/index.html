@@ -25,10 +25,51 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Coachable</a>
         <div class="ml-auto">
-            <button class="btn btn-outline-primary my-2 mx-1" type="button">Sign Up</button>
-            <button class="btn btn-outline-primary my-2 mx-1" type="button">Login</button>
+            <button class="btn btn-outline-info my-2 mx-1" type="button" data-toggle="modal" data-target="#signup">Sign Up</button>
+            <button class="btn btn-outline-info my-2 mx-1" type="button">Login</button>
         </div>
     </nav>
+    <!-- Modal -->
+    <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="signupLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="signupLabel">Sign Up</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="type" class="col-form-label">Sign Up As</label>
+                <select class="form-control" id="type">
+                  <option disabled hidden selected>Select One</option>
+                  <option>Student/ Mentee</option>
+                  <option>Coach/ Mentor</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="email" class="col-form-label">Email</label>
+                <input type="text" class="form-control" id="email">
+              </div>
+              <div class="form-group">
+                <label for="password" class="col-form-label">Password</label>
+                <input type="text" class="form-control" id="password">
+              </div>
+              <div class="form-group">
+                <label for="confirm" class="col-form-label">Confirm Password</label>
+                <input type="text" class="form-control" id="confirm">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-info">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <main role="main">
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -38,7 +79,7 @@
               <div class="carousel-caption text-left px-2 text-bg">
                 <h1>Looking for a mentor?</h1>
                 <p>Coachable is the easiest, safest and most affordable way to connect with experienced coaches and mentors who can help you improve your skills and performance, and reach your goals.</p>
-                <p><a class="btn btn-lg btn-info" href="#" role="button">Sign up today</a></p>
+                <p><a class="btn btn-lg btn-info" role="button" data-toggle="modal" data-target="#signup">Sign up today</a></p>
               </div>
             </div>
           </div>
@@ -48,7 +89,7 @@
               <div class="carousel-caption px-2 text-bg">
                 <h1>Want to be a coach?</h1>
                 <p>No matter what kind of skill or talent you have to share, Coachable makes it simple and easy to find students. You’re in full control of your availability, prices, and how you interact with students.</p>
-                <p><a class="btn btn-lg btn-info" href="#" role="button">Sign up now</a></p>
+                <p><a class="btn btn-lg btn-info" role="button" data-toggle="modal" data-target="#signup">Sign up now</a></p>
               </div>
             </div>
           </div>
