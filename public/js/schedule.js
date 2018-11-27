@@ -37,8 +37,8 @@ $(document).ready(() => {
 
   const $today = $('#today');
   $today.on('click', () => {
-    var currentMonth = today.getMonth();
-    var currentYear = today.getFullYear();
+    currentMonth = today.getMonth();
+    currentYear = today.getFullYear();
 
     createCalendar(currentMonth, currentYear);
   });
@@ -54,6 +54,8 @@ $(document).ready(() => {
 
     createCalendar(currentMonth, currentYear);
   });
+
+  createCalendar(currentMonth, currentYear);
 
   function createCalendar(month, year) {
     $month.text(`${months[month]} ${year}`);
@@ -90,7 +92,4 @@ $(document).ready(() => {
       $tbody.append($tr);
     }
   }
-
-  createCalendar(currentMonth, currentYear);
-
 });
