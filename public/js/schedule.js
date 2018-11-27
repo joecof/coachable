@@ -97,13 +97,13 @@ $(document).ready(() => {
   function renderTasks() {
     firebase.database().ref('/tasks/').once('value').then(snapshot  => {
       let tasks = snapshot.val();
+      tasks.filter(task => new Date(task.date + " " + task.time) > new Date);
       tasks.forEach(task => {
         let date = new Date(task.date + " " + task.time);
         let day = days[date.getDay()]
         let month = months[date.getMonth()];
         let students = Object.keys(task.students).join(', ');
         let time = task.time;
-        console.log(time);
         let $dt = $('<dt>').text(`${day}, ${month} ${date.getDate()}, ${date.getFullYear()}`);
         let $dd = $('<dd class="small">').text(`${time} ${task.subject} with ${students} at ${task.location}`)
         $tasks.append($dt.append($dd));
