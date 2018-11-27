@@ -47,49 +47,34 @@
                 </ul>
             </div>
         </nav>
-        <div class="container mt-5">
-          <div class="row mb-2">
-            <div class="col-12 col-md-8 text-center">
-              <h2 id="month"></h2>
-            </div>
-            <div class="col-12 col-md-4 text-center">
-              <div class="btn-group" role="group" aria-label="Calender control">
-                <button type="button" class="btn btn-muted" id="prev">&lt</button>
-                <button type="button" class="btn btn-muted" id="today">Today</button>
-                <button type="button" class="btn btn-muted" id="next">&gt</button>
+        <div class="container-fluid mt-5">
+          <div class="row">
+            <div class="container col-8">
+              <div class="row mb-2">
+                <div class="col-12 col-md-8 text-center">
+                  <h2 id="month"></h2>
+                </div>
+                <div class="col-12 col-md-4 text-center">
+                  <div class="btn-group" role="group" aria-label="Calender control">
+                    <button type="button" class="btn btn-muted" id="prev">&lt</button>
+                    <button type="button" class="btn btn-muted" id="today">Today</button>
+                    <button type="button" class="btn btn-muted" id="next">&gt</button>
+                  </div>
+                </div>
               </div>
+              <div class="row">
+                <div class="col-12">
+                  <table class="table table-bordered table-striped text-center" id="calender">
+                  </table>
+                </div>
+              </div><!--(./row)-->
+            </div><!--(./COntainer")-->
+            <div class="container col-4 mt-5">
+              <dl id="tasks">
+
+              </dl>
             </div>
           </div>
-          <div class="row">
-            <div class="col-12">
-              <table class="table table-bordered table-striped text-center" id="calender">
-              </table>
-            </div>
-          </div><!--(./row)-->
-        </div><!--(./COntainer")-->
-
-        <div class="tasklist left">
-            <div class="day">
-                <p>Sunday, November 11, 2018</p>
-                <div class="task">
-                    <p>XXXXXXXX</p>
-                </div>
-                <div class="task">
-                    <p>XXXXXXXX</p>
-                </div>
-            </div>
-            <div class="day">
-                <p>Monday, November 12, 2018</p>
-                <div class="task">
-                    <p>XXXXXXXX</p>
-                </div>
-            </div>
-            <div class="day">
-                <p>Friday, November 1, 2018</p>
-                <div class="task">
-                    <p>XXXXXXXX</p>
-                </div>
-            </div>
         </div>
     </body>
 </html>

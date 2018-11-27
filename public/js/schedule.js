@@ -1,11 +1,11 @@
 $(document).ready(() => {
+  var database = firebase.database();
 
   // Time
   const today = new Date();
   var currentMonth = today.getMonth();
   var currentYear = today.getFullYear();
 
-  // name of days
   const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
@@ -13,17 +13,19 @@ $(document).ready(() => {
   const $calender = $('#calender');
   const $thead = $('<thead>');
   const $tbody = $('<tbody>');
-  $calender.append($thead, $tbody);
-
   const $week = $('<tr>');
+  const $month = $('#month');
+  const $prev = $('#prev');
+  const $today = $('#today');
+  const $next = $('#next');
+  const $tasks = $('#tasks');
+
+  $calender.append($thead, $tbody);
   $thead.append($week);
   days.forEach(e => {
     $week.append($('<th>').text(e));
   });
 
-  const $month = $('#month');
-
-  const $prev = $('#prev');
   $prev.on('click', () => {
     if (currentMonth === 0) {
       currentMonth = 11;
@@ -35,7 +37,6 @@ $(document).ready(() => {
     createCalendar(currentMonth, currentYear);
   });
 
-  const $today = $('#today');
   $today.on('click', () => {
     currentMonth = today.getMonth();
     currentYear = today.getFullYear();
@@ -43,7 +44,6 @@ $(document).ready(() => {
     createCalendar(currentMonth, currentYear);
   });
 
-  const $next = $('#next');
   $next.on('click', () => {
     if (currentMonth === 11) {
       currentMonth = 0;
@@ -56,6 +56,7 @@ $(document).ready(() => {
   });
 
   createCalendar(currentMonth, currentYear);
+  renderTasks();
 
   function createCalendar(month, year) {
     $month.text(`${months[month]} ${year}`);
@@ -91,5 +92,22 @@ $(document).ready(() => {
 
       $tbody.append($tr);
     }
+  }
+
+  function renderTasks() {
+    firebase.database().ref('/tasks/').once('value').then(snapshot  => {
+      let tasks = snapshot.val();
+      tasks.forEach(task => {
+        let date = new Date(task.date + " " + task.time);
+        let day = days[date.getDay()]
+        let month = months[date.getMonth()];
+        let students = Object.keys(task.students).join(', ');
+        let time = task.time;
+        console.log(time);
+        let $dt = $('<dt>').text(`${day}, ${month} ${date.getDate()}, ${date.getFullYear()}`);
+        let $dd = $('<dd class="small">').text(`${time} ${task.subject} with ${students} at ${task.location}`)
+        $tasks.append($dt.append($dd));
+      });
+    });
   }
 });
