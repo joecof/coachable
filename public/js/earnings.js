@@ -9,83 +9,56 @@
 
 function myFunction2() {
 
-  
-  
 }
 
-// var insideContent = document.getElementById('innerContent');
-// var insideContent2 = document.createElement('div');
-// insideContent.appendChild(insideContent2);
-
-// insideContent2.style.width = '200';
-// insideContent2.style.height = '200';
-// insideContent2.style.backgroundColor = 'pink';
-
-
-
-
-
-const dbRefObject = firebase.database().ref().child('earnings/');
-
-dbRefObject.on('value',function(snap){
-  console.log(snap.val());
-  var list=snap.val();
-  //document.getElementById("data1").innerText = list["coffee"];
-
-  const data1 = document.getElementById("data1");
-
+const month_total = firebase.database().ref().child('month_totals/')
+month_total.on('value',function(snap) {
+  var list = snap.val();
   for(var key in list) {
-      console.log(list[key]);
-      var listItems = document.createElement("li");
-      // listItems = document.innerHTML('November 12');
-      
-      var textInListItems = document.createTextNode(list[key])
-    
-      listItems.appendChild(textInListItems);
-      document.getElementById("myList").appendChild(listItems);
-
-      var unorderedList = document.getElementById("myList");
-      unorderedList.style.listStyleType = 'none';
-      listItems.style.margin = "0 0 14px 0";
-      
-      //data1.innerText = list[key];
+    var monthTotal = document.getElementById('monthTotal');
+    var innerMonthTotal = document.createTextNode("$" + list[key]);
+    monthTotal.appendChild(innerMonthTotal);
   }
-});
+}); 
 
-const dbRefObject1 = firebase.database().ref().child('total/'); 
-
-dbRefObject1.on('value', function(snap) {
-  console.log(snap.val());
-  var total = snap.val();
-
-  for(var key in total) {
-    console.log(total[key]);
-    var totalAmount = document.getElementById('total');
-    var textInTotal = document.createTextNode(total[key]);
-    totalAmount.appendChild(textInTotal);
-  
-    // console.log(total["$265"]);
+const nov4_10 = firebase.database().ref().child('weekID/1/Week1/')
+nov4_10.on('value',function(snap) {
+  var weekHeader = snap.val();
+  for(var key in weekHeader) {
+    var dates = document.getElementById('weekHeader');
+    var innerWeekHeader = document.createTextNode(weekHeader[key]);
+    dates.appendChild(innerWeekHeader);
   }
+}); 
 
-})
-
-dbRefObject2 = firebase.database().ref().child('dates1/');
-
-dbRefObject2.on('value', function(snap) {
+dates1 = firebase.database().ref().child('weekID/1/dates1/');
+dates1.on('value', function(snap) {
   console.log(snap.val());
   var earningDates = snap.val();
-
-  const novDates = document.getElementById('novDates');
-
+  const novDates = document.getElementById('weekDates');
   for(var key in earningDates) {
     var dateItems = document.createElement('li');
     var innerDateItems = document.createTextNode(earningDates[key])
-
     dateItems.appendChild(innerDateItems);
     novDates.appendChild(dateItems);
-
   }
 }) 
+
+const dailyEarnings = firebase.database().ref().child('weekID/1/daily_earning/');
+dailyEarnings.on('value',function(snap){
+  var list=snap.val();
+  for(var key in list) {
+      var listItems = document.createElement("li");
+      var textInListItems = document.createTextNode('$' + list[key]);
+      listItems.appendChild(textInListItems);
+      document.getElementById("dailyAmount").appendChild(listItems);
+  }
+  
+});
+
+
+
+
 
 
 

@@ -5,87 +5,132 @@
 
 #content {
     width: 100%;
-    height: 700px;
-    text-align:center;
+    height: 1000px;
     background-color:#f2f2f2;
 }
 
-#dates {
-    padding-top:75px;
-    padding-bottom:15px;
-}
-
-#total {
-    padding-top:25px;
-}
-
-#timeStamps {
-    /* background-color: pink; */
-    margin: 0 auto;
-    width:50%;
-    height:150px
-}
-
-#novDatesBox {
-    width:50%;
-    height:150px;
-}
-
-
-#money {
-    width:50%;
-    height:150px;
-    float:right;
-    /* background-color: lightgreen; */
-}
-
-#novDates {
-    float:left;
-    height:150px;
-    /* background-color: lightblue; */
-    list-style-type: none;
-}
-
-#novDates > li {
-    margin-bottom: 14px;
-}
-
-#myList {
-    float: left;
-}
-
 #innerContent {
-    border-radius: 25px;
-    margin-top: 125px;
-    height: 400px;
-    display: inline-block;
-    border: 1px solid  gray;
-    background-color: white;
-    width:80%;
-
-}
-
-#earning {
-    /* background-color: pink; */
-    width: 80%;
-    /* height: 400px; */
+    height: 1000px;
     margin: 0 auto;
+    background-color: white;
+    width:90%;
+}
+
+#container {
+    margin: 0 auto;
+    width: 95%;
+    height:900px;
+}
+
+#weekHeader {
+    margin-top:10px;
+    /* border: 1px solid  gray;  */
+
+}
+
+#totalMonthly {
+    font-size: 35pt;
+}
+
+#monthTotal {
+    font-size: 20pt;
+    color:green;
+
+}
+
+#month_earning {
+    border-bottom: 1px solid  #f2f2f2;
+    display:inline-block;
+    margin: 0 auto;
+    width: 100%;
+    height:200px;
+}
+
+#weekly_earnings {
+    border-bottom: 1px solid  #f2f2f2; 
+    margin-top:20px;
+    margin-bottom:20px; 
+    width:65%;
+    height:375px;
+    display:inline-block;
+}
+
+#time_stamps {
+    margin:0 auto;
+    width:90%;
+    height:350px;
+    /* border: 1px solid  black; */
+}
+
+#daily_total {
+    margin-top:15px;
+    width:50%;
+    height:335px;
+    /* background-color: lightgreen; */
+    float:right;
+}
+
+#dailyAmount > li{
+    list-style-type:none;
+    margin:0 0 10px 0;
+    
+}
+
+#week_dates {
+    margin-top:15px;
+    width:49%;
+    height:335px;
+    float:left;
+    /* background-color:pink; */
+}
+
+#weekDates > li {
+    list-style-type:none;
+    margin:0 0 10px 0;
+}
+
+#extra_info1 {
+    vertical-align: top;
+    margin-top:20px;
+    border-bottom: 1px solid  #f2f2f2;
+    width:30%;
+    height:300px;
+    margin-left:30px;
+    display:inline-block;
+}  
+
+#extra_info2 {
+    vertical-align: top;
     /* border: 1px solid  gray; */
+    width:30%;
+    height:200px;
+    margin-left:30px;
+
+    display:inline-block;
+} 
+
+#total_weekly_earnings {
+    /* border: 1px solid  gray; */
+    width:65%;
+    height:200px;
+    display:inline-block;
 
 }
 
-a {
-    margin-top: 10px;
-    width:200px;
-    text-decoration: none;
-    display: inline-block;
-    padding: 10px 16px;
-}
 
-a:hover {
-    background-color: #ddd;
-    color: black;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .previous {
     background-color: white;
