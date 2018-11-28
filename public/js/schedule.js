@@ -10,6 +10,7 @@ $(document).ready(() => {
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
   // jQuery Constant
+  const $logout = $('#logout');
   const $calender = $('#calender');
   const $thead = $('<thead>');
   const $tbody = $('<tbody>');
@@ -25,6 +26,9 @@ $(document).ready(() => {
   days.forEach(e => {
     $week.append($('<th>').text(e));
   });
+
+  createCalendar(currentMonth, currentYear);
+  renderTasks();
 
   $prev.on('click', () => {
     if (currentMonth === 0) {
@@ -55,7 +59,13 @@ $(document).ready(() => {
     createCalendar(currentMonth, currentYear);
   });
 
-  createCalendar(currentMonth, currentYear);
+  $logout.on('click', () => {
+    firebase.auth().signOut().then(function() {
+      $(location).attr('href', './')
+    }).catch(function(error) {
+      // An error happened.
+    });
+  })
 
   function createCalendar(month, year) {
     $month.text(`${months[month]} ${year}`);
@@ -81,11 +91,13 @@ $(document).ready(() => {
       }
 
       for (let j  = 0; j < monthArr[i].length; j++) {
-        $tr.append($('<td>').text(monthArr[i][j].getDate()));
+        $tr.append($('<td>').text(monthArr[i][j].getDate()).on('click', () => {
+          console.log(monthArr[i][j]);
+        }));
       }
 
       let last = monthArr.length - 1;
-      if (i === monthArr.length - 1 && monthArr[last].length < 7) {
+      if (i === last && monthArr[last].length < 7) {
         $tr.append($(`<td colspan='${7 - monthArr[last].length}'>`));
       }
 
@@ -93,20 +105,21 @@ $(document).ready(() => {
     }
   }
 
-  firebase.database().ref('/tasks/').on('value', (snapshot)  => {
-    let tasks = snapshot.val();
-    $tasks.text('');
-    tasks.filter(task => new Date(task.date + " " + task.time) > new Date);
-    tasks.forEach(task => {
-      let date = new Date(task.date + " " + task.time);
-      let day = days[date.getDay()]
-      let month = months[date.getMonth()];
-      let students = Object.keys(task.students).join(', ');
-      let time = task.time;
-      let $dt = $('<dt>').text(`${day}, ${month} ${date.getDate()}, ${date.getFullYear()}`);
-      let $dd = $('<dd class="small">').text(`${time} ${task.subject} with ${students} at ${task.location}`)
-      $tasks.append($dt.append($dd));
+  function renderTasks() {
+    firebase.database().ref('/tasks/').on('value', (snapshot)  => {
+      let tasks = snapshot.val();
+      $tasks.text('');
+      tasks.filter(task => new Date(task.date + " " + task.time) > new Date);
+      tasks.forEach(task => {
+        let date = new Date(task.date + " " + task.time);
+        let day = days[date.getDay()]
+        let month = months[date.getMonth()];
+        let students = Object.keys(task.students).join(', ');
+        let time = task.time;
+        let $dt = $('<dt>').text(`${day}, ${month} ${date.getDate()}, ${date.getFullYear()}`);
+        let $dd = $('<dd class="small">').text(`${time} ${task.subject} with ${students} at ${task.location}`)
+        $tasks.append($dt.append($dd));
+      });
     });
-
-  });
+  }
 });
