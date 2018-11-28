@@ -10,7 +10,6 @@ $(document).ready(() => {
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
   // jQuery Constant
-  const $logout = $('#logout');
   const $calender = $('#calender');
   const $thead = $('<thead>');
   const $tbody = $('<tbody>');
@@ -58,14 +57,6 @@ $(document).ready(() => {
 
     createCalendar(currentMonth, currentYear);
   });
-
-  $logout.on('click', () => {
-    firebase.auth().signOut().then(function() {
-      $(location).attr('href', './')
-    }).catch(function(error) {
-      // An error happened.
-    });
-  })
 
   function createCalendar(month, year) {
     $month.text(`${months[month]} ${year}`);
