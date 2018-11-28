@@ -69,6 +69,16 @@
                     <div id = "month_earning">
                         <h2 id = "totalMonthly">Total Monthly Earnings</h2>
                         <p id = "monthTotal"></p>
+
+                        <div class="dropdown">
+                            <button class="dropbtn">Weeks</button>
+                            <div class="dropdown-content">
+                                <a href ="#" onclick = "myFunction()">Current Week</a>
+                                <a href="#" onclick = "myFunction2()"> Nov 11 - 17</a>
+                                <a href="#" onclick = "myFunction3()"> Nov 18 - 24</a>
+                            </div>
+                        </div>
+
                     </div>
                     <h1 id = "weekHeader"></h1>
                     <div id = "weekly_earnings">
@@ -82,53 +92,27 @@
                         </div>
                     </div> 
                     <div id = "extra_info2">
-                            <p>current week's earnings: $500</p>
-                            <p>days worked: 5</p>
-                            <p>hours worked: 28</p>
-                            <p>daily average earnings: $65</p>
+                        <p>current week's earnings:<span id = "current_week_earning">  </span>
+                        <p>days worked: <span id = "days_worked"></span></p>
+                        <p>hours worked: <span id = "hours_worked"></span></p>
+                        <p>current average earnings: <span id = "average_earnings"></span></p>
+                        <hr>
+                        <p>previous week's earnings:<span id = "previous_week_earning"></span> </p>
+                        <p>days worked: <span id = "previous_days_worked"></span> </p>
+                        <p>hours worked: <span id = "previous_hours_worked"></span> </p>
+                        <p>previous average earnings: <span id = "previous_average_earning"></span> </p>
                     </div>
                     <div id = "total_weekly_earnings">
-                        <h1 id = "weeklyTotal">Total: $543</h1>
+                        <h1 id = "weeklyTotal"></h1>
                     </div>
-                     <div id = "extra_info1">
-                        <p>previous week's earnings: $500</p>
-                        <p>days worked: 7</p>
-                        <p>hours worked: 30</p>
-                        <p>daily average earnings: $55</p>
-                    </div>
-                 </div>
-                
-                
-                
+                    
+                </div>
             </div>
-            <!-- <div> 
-                <button onclick="myFunction()">Click me</button>
-                <a onclick="myFunction()" class="previous">Previous</a>
-                <a onclick="myFunction2()" class="next">Next</a>
-            </div> -->
-        
-
-            <div id = "footer">
-
-            </div>
-
         </div>
     </body>
 </html>
 
 
-
-<!-- <div id = "earnings_content">
-        
-        <div id = "timeStamps">
-            <div id = "money">
-                <ul id = "myList"></ul>
-            </div>  
-            <div id = "novDatesBox">                      
-                <ul id = "novDates"></ul>
-            </div>    
-        </div>
-    </div> -->
 
 
 
