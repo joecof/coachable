@@ -107,6 +107,6 @@ $(document).ready(() => {
       let $dd = $('<dd class="small">').text(`${time} ${task.subject} with ${students} at ${task.location}`)
       $tasks.append($dt.append($dd));
     });
-    
+
   });
 });
