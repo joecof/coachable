@@ -3,22 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Coachable - Schedule</title>
-
-        <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
-        <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyDr8GpiZ8219dPlunOB4LBr2UKXBNoyogU",
-            authDomain: "coachable-2e83b.firebaseapp.com",
-            databaseURL: "https://coachable-2e83b.firebaseio.com/",
-            projectId: "coachable-2e83b",
-            storageBucket: "coachable-2e83b.appspot.com",
-            messagingSenderId: "591531938331"
-        };
-        firebase.initializeApp(config);
-        </script>
-
+        <title>Coachable - Earnings</title>
         <!-- update the version number as needed -->
         <script defer src="/__/firebase/5.5.7/firebase-app.js"></script>
         <!-- include only the Firebase features as you need -->
@@ -33,9 +18,10 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
-        <link href = "./css/earnings_style.css" rel = "stylesheet">
-        <script src = "./js/earnings.js"></script>
+
+        <link href="./css/earnings_style.css" rel="stylesheet">
+        <script type="text/javascript" src="./js/earnings.js"></script>
+        <script type="text/javascript" src="./js/logout.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -59,59 +45,53 @@
                         <a class="nav-link" href="#">Profile</a>
                     </li>
                 </ul>
-                <button class="btn btn-outline-primary my-2 mx-1" type="button">Sign Up</button>
                 <button class="btn btn-outline-primary my-2 mx-1" type="button">Login</button>
             </div>
         </nav>
-        <div id = "content"> 
-            <div id = "innerContent">
+        <div id="content">
+            <div id="innerContent">
                 <div id ="container">
-                    <div id = "month_earning">
-                        <h2 id = "totalMonthly">Total Monthly Earnings</h2>
-                        <p id = "monthTotal"></p>
+                    <div id="month_earning">
+                        <h2 id="totalMonthly">Total Monthly Earnings</h2>
+                        <p id="monthTotal"></p>
                         <div class="dropdown">
                             <button class="dropbtn">Weeks</button>
                             <div class="dropdown-content">
-                                <a href ="#" onclick = "myFunction()">Current Week</a>
-                                <a href="#" onclick = "myFunction2()"> Nov 11 - 17</a>
-                                <a href="#" onclick = "myFunction3()"> Nov 18 - 24</a>
+                                <a id="currentWeek">Current Week</a>
+                                <a id="nextWeek"> Nov 11 - 17</a>
+                                <a id="followingWeek"> Nov 18 - 24</a>
                             </div>
                         </div>
 
                     </div>
-                    <h1 id = "weekHeader"></h1>
-                    <div id = "weekly_earnings">
-                        <div id = "time_stamps">
-                            <div id = "week_dates">                      
-                                <ul id = "weekDates"></ul>
-                            </div>    
-                            <div id = "daily_total">
-                                <ul id = "dailyAmount"></ul>
-                            </div>  
+                    <h1 id="weekHeader"></h1>
+                    <div id="weekly_earnings">
+                        <div id="time_stamps">
+                            <div id="week_dates">
+                                <ul id="weekDates"></ul>
+                            </div>
+                            <div id="daily_total">
+                                <ul id="dailyAmount"></ul>
+                            </div>
                         </div>
-                    </div> 
-                    <div id = "extra_info2">
-                        <p>Current week's earnings:<span id = "current_week_earning">  </span>
-                        <p>Days worked: <span id = "days_worked"></span></p>
-                        <p>Hours worked: <span id = "hours_worked"></span></p>
-                        <p>Current average earnings: <span id = "average_earnings"></span></p>
+                    </div>
+                    <div id="extra_info2">
+                        <p>Current week's earnings:<span id="current_week_earning">  </span>
+                        <p>Days worked: <span id="days_worked"></span></p>
+                        <p>Hours worked: <span id="hours_worked"></span></p>
+                        <p>Current average earnings: <span id="average_earnings"></span></p>
                         <hr>
-                        <p>Previous week's earnings:<span id = "previous_week_earning"></span> </p>
-                        <p>Days worked: <span id = "previous_days_worked"></span> </p>
-                        <p>Hours worked: <span id = "previous_hours_worked"></span> </p>
-                        <p>Previous average earnings: <span id = "previous_average_earning"></span> </p>
+                        <p>Previous week's earnings:<span id="previous_week_earning"></span> </p>
+                        <p>Days worked: <span id="previous_days_worked"></span> </p>
+                        <p>Hours worked: <span id="previous_hours_worked"></span> </p>
+                        <p>Previous average earnings: <span id="previous_average_earning"></span> </p>
                     </div>
-                    <div id = "total_weekly_earnings">
-                        <h1 id = "weeklyTotal"></h1>
+                    <div id="total_weekly_earnings">
+                        <h1 id="weeklyTotal"></h1>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
     </body>
 </html>
-
-
-
-
-
