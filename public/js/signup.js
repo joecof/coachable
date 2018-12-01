@@ -39,7 +39,8 @@ $(document).ready(() => {
         if (user) {
           firebase.database().ref("users/" + user.uid).set(
             {
-              "email" : user.email
+              "email" : user.email,
+              "type" : type
             }
           );
           $(location).attr('href', './schedule');
