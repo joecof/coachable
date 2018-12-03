@@ -60,6 +60,7 @@ function myFunction() {
   const daysWorkedRef = firebase.database().ref().child('statsID/1/days_worked/');
   daysWorkedRef.on('value', function(snap){
     var list=snap.val();
+    console.log(snap.val());
     var days_worked = document.getElementById('days_worked');
     days_worked.innerHTML = '';
     for(var key in list) {
@@ -93,6 +94,7 @@ function myFunction() {
   const previousWeekEarningRef = firebase.database().ref().child('weekID/2/weeklyTotal/');
   previousWeekEarningRef.on('value', function(snap){
     var list=snap.val();
+    console.log(snap.val());
     var previous_week_earning = document.getElementById('previous_week_earning');
     previous_week_earning.innerHTML = '';
     for(var key in list) {
@@ -424,7 +426,6 @@ function myFunction3() {
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
-
 
 
 const month_total = firebase.database().ref().child('month_totals/')
