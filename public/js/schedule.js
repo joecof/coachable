@@ -112,11 +112,14 @@ $(document).ready(() => {
     }
   }
 
-  function renderTasks() {
+  function renderTasks(month, year) {
     firebase.database().ref('/tasks/').on('value', (snapshot)  => {
       let tasks = snapshot.val();
       $tasks.text('');
-      tasks.filter(task => new Date(task.date + " " + task.time) > new Date);
+      tasks = tasks.filter(task => {
+        let taskDate = new Date(task.date + " " + task.time);
+        return taskDate.getFullYear() === year && taskDate.getMonth() === month;
+      });
       tasks.forEach(task => {
         let date = new Date(task.date + " " + task.time);
         let day = days[date.getDay()]
