@@ -124,7 +124,7 @@ $(document).ready(() => {
         let date = new Date(task.date + " " + task.time);
         let day = days[date.getDay()]
         let month = months[date.getMonth()];
-        let students = Object.keys(task.students).join(', ');
+        let students = task.student;
         let time = task.time;
         let $dt = $('<dt>').text(`${day}, ${month} ${date.getDate()}, ${date.getFullYear()}`);
         let $dd = $('<dd class="small">').text(`${time} ${task.subject} with ${students} at ${task.location}`)
