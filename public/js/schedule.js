@@ -106,7 +106,6 @@ $(document).ready(() => {
             let sameDate = monthArr[i][j].getDate() == taskDate.getDate();
             let sameMonth = monthArr[i][j].getMonth() == taskDate.getMonth();
             let sameYear = monthArr[i][j].getFullYear() == taskDate.getFullYear();
-            console.log(sameDate && sameMonth && sameYear);
             sameDate && sameMonth && sameYear ? $td.addClass('bg-warning text-white') : null;
           });
         });
