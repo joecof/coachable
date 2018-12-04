@@ -16,6 +16,7 @@ $(document).ready(() => {
     let tasks = snapshot.val();
     taskCount = tasks.length;
     $('#tasks').text('');
+    $('#today').text('');
     tasks = tasks.filter(task => new Date(task.date + " " + task.time) > new Date);
     tasks.forEach(task => {
       let date = new Date(task.date + " " + task.time);
