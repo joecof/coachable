@@ -107,14 +107,14 @@ $(document).ready(() => {
             let sameMonth = monthArr[i][j].getMonth() == taskDate.getMonth();
             let sameYear = monthArr[i][j].getFullYear() == taskDate.getFullYear();
             sameDate && sameMonth && sameYear ? $td.addClass('bg-warning text-white') : null;
+
+            // Highlight today cell
+            let isDate = monthArr[i][j].getDate() == today.getDate();
+            let isMonth = monthArr[i][j].getMonth() == today.getMonth();
+            let isYear = monthArr[i][j].getFullYear() == today.getFullYear();
+            isDate && isMonth && isYear ? $td.attr('class', 'bg-info text-white') : null;
           });
         });
-
-        // Highlight today cell
-        let isDate = monthArr[i][j].getDate() == today.getDate();
-        let isMonth = monthArr[i][j].getMonth() == today.getMonth();
-        let isYear = monthArr[i][j].getFullYear() == today.getFullYear();
-        isDate && isMonth && isYear ? $td.addClass('bg-info text-white') : null;
 
         // TODO task of date popup when click on cell
         $tr.append($td.text(monthArr[i][j].getDate()).on('click', () => {
