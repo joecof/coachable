@@ -11,7 +11,7 @@ $(document).ready(() => {
 
   // jQuery Constant
   const $calender = $('#calender');
-  const $thead = $('<thead>');
+  const $thead = $('<thead>').addClass('thead-dark');
   const $tbody = $('<tbody>');
   const $week = $('<tr>');
   const $month = $('#month');
