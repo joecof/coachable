@@ -22,12 +22,11 @@ $(document).ready(() => {
 
   $calender.append($thead, $tbody);
   $thead.append($week);
-  days.forEach(e => {
-    $week.append($('<th>').text(e));
-  });
+
+  // Render Week
+  renderWeek();
 
   createCalendar(currentMonth, currentYear);
-  renderTasks();
 
   $prev.on('click', () => {
     if (currentMonth === 0) {
