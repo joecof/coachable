@@ -25,7 +25,11 @@ $(document).ready(() => {
       let time = task.time;
       let $dt = $('<dt>').text(`${day}, ${month} ${date.getDate()}, ${date.getFullYear()}`);
       let $dd = $('<dd class="small">').text(`${time} ${task.subject} with ${students} at ${task.location}`)
-      $('#tasks').append($dt.append($dd));
+
+      let isDate = date.getDate() == today.getDate();
+      let isMonth = date.getMonth() == today.getMonth();
+      let isYear = date.getFullYear() == today.getFullYear();
+      isDate && isMonth && isYear ? $('#today').append($dt.append($dd)) : $('#tasks').append($dt.append($dd));
     });
   });
 
