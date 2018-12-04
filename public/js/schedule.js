@@ -93,7 +93,12 @@ $(document).ready(() => {
       }
 
       for (let j  = 0; j < monthArr[i].length; j++) {
-        $tr.append($('<td>').text(monthArr[i][j].getDate()).on('click', () => {
+        let $td = $('<td>');
+        let isDate = monthArr[i][j].getDate() == today.getDate();
+        let isMonth = monthArr[i][j].getMonth() == today.getMonth();
+        let isYear = monthArr[i][j].getFullYear() == today.getFullYear();
+        isDate && isMonth && isYear ? $td.addClass('bg-info text-white') : null;
+        $tr.append($td.text(monthArr[i][j].getDate()).on('click', () => {
           console.log(monthArr[i][j]);
         }));
       }
