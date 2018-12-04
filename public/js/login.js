@@ -32,7 +32,7 @@ $(document).ready(() => {
               "email" : user.email
             }
           );
-          $(location).attr('href', './schedule');
+          $(location).attr('href', './dashboard');
         }
       });
     }

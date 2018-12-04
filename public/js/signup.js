@@ -43,7 +43,7 @@ $(document).ready(() => {
               "type" : type
             }
           );
-          $(location).attr('href', './schedule');
+          $(location).attr('href', './dashboard');
         }
       });
     }
