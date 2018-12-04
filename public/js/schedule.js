@@ -57,12 +57,23 @@ $(document).ready(() => {
     createCalendar(currentMonth, currentYear);
   });
 
+  function renderWeek() {
+    days.forEach(e => {
+      $week.append($('<th>').text(e));
+    });
+  }
+
   function createCalendar(month, year) {
     $month.text(`${months[month]} ${year}`);
     $tbody.text('');
     var daysInAMonth = new Date(year, month + 1, 0).getDate();
     var dateArr = [];
     var monthArr = [];
+
+    // render tasks to the corresponding month
+    renderTasks(month, year);
+
+    // create array of dates to corresponding month
     for (let i = 1; i <= daysInAMonth; i++) {
       let newDate = new Date(year, month, i);
       dateArr.push(newDate);
@@ -74,6 +85,7 @@ $(document).ready(() => {
       }
     }
 
+    // render dates to document
     for (let i = 0; i < monthArr.length; i++) {
       let $tr = $('<tr>');
       if (i === 0 && monthArr[0].length < 7) {
