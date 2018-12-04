@@ -21,7 +21,6 @@ $(document).ready(() => {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
-        console.log(`${errorCode}: ${errorMessage}`);
         $loginError.text(errorMessage);
       });
 

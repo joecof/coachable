@@ -19,11 +19,11 @@ $(document).ready(() => {
     if (type === null) {
       $signupError.text("Please select one!");
     } else if (email === "") {
-      $signupError.text("Your email cannot be enpty!");
+      $signupError.text("Your email cannot be empty!");
     } else if (password === "") {
-      $signupError.text("Your passwords cannot be enpty!");
+      $signupError.text("Your passwords cannot be empty!");
     } else if (confirm === "") {
-      $signupError.text("Your passwords cannot be enpty!");
+      $signupError.text("Your passwords cannot be empty!");
     } else if (password !== confirm) {
       $signupError.text("Your passwords do not match! Please try again.");
     } else {
