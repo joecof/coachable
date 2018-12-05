@@ -1,4 +1,9 @@
 $(document).ready(() => {
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (!user) {
+      $(location).attr('href', '/');
+    }
+  });
 
   const $logout = $('#logout');
 
@@ -9,4 +14,5 @@ $(document).ready(() => {
       // An error happened.
     });
   })
+
 })
