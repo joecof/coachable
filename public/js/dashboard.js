@@ -64,22 +64,27 @@ $(document).ready(() => {
     date = $('#date').val();
     time = $('#time').val();
     duration = $('#duration').val();
-    place = $('#place').val();
+    place = $('#place').val().trim();
 
-    firebase.database().ref("tasks/" + taskCount).update({
-        'date' : date,
-        'duration' : duration,
-        'location' : place,
-        'student' : name,
-        'subject' : subject,
-        'time' : time
-    });
+    if (date === "" || time === "" || duration === null || place === "") {
+      $('#errorMsg').text('Please enter all information');
+    } else {
+      firebase.database().ref("tasks/" + taskCount).update({
+          'date' : date,
+          'duration' : duration,
+          'location' : place,
+          'student' : name,
+          'subject' : subject,
+          'time' : time
+      });
 
-    $('#date').val('');
-    $('#time').val('');
-    $('#duration').val('');
-    $('#place').val('');
+      $('#date').val('');
+      $('#time').val('');
+      $('#duration').val('');
+      $('#place').val('');
+      $('#errorMsg').text('');
 
-    $('#addStudent').modal('hide');
+      $('#addStudent').modal('hide');
+    }
   });
 });

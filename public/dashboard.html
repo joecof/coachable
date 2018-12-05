@@ -102,7 +102,7 @@
                 <input type="time" class="form-control" id="time"/>
 
                 <label for="duration" class="col-form-label">Duration (Hour)</label>
-                <input type="text" class="form-control" id="duration"/>
+                <input type="number" class="form-control" min="0" max="12" id="duration"/>
 
                 <label for="place" class="col-form-label">Location</label>
                 <input type="text" class="form-control" id="place"/>
@@ -110,6 +110,7 @@
             </form>
           </div>
           <div class="modal-footer">
+            <span id="errorMsg" class="text-danger"></span>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
             <button class="btn btn-primary" id="add">Add</button>
           </div>
